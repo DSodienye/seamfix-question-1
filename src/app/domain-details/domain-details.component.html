@@ -1,32 +1,32 @@
 <h1>
-  [[ domain name ]]
+  {{ domain?.name }}
 </h1>
 <div class="form">
   <div class="form-group">
     <label>ID:</label>
-    [[ domain id ]]
+    {{ domain?.id }}
   </div>
   <div class="form-group">
     <label>Name:</label>
-    [[ domain name ]]
+    {{ domain?.name }}
   </div>
   <div class="form-group">
     <label>Expiration:</label>
-    [[ domain expiration ]]
+    {{ domain?.expiration }}
   </div>
   <div class="form-group">
     <label>Auto Renew:</label>
-    [[ domain auto-renew ]]
+    {{ formatFlag(domain?.auto_renew ?? false) }}
   </div>
   <div class="form-group">
     <label>Domain Privacy:</label>
-    [[ domain privacy ]]
+    {{ formatFlag(domain?.domain_privacy ?? false) }}
   </div>
   <div class="form-group">
     <label>Renewal Price:</label>
-    [[ domain renewal price ]]
+    {{ formatRenewalPrice(domain?.renewal_price ?? 0) }}
   </div>
   <div class="form-actions">
-    <button type="button">Back to the list</button>
+    <button type="button" (click)="backToList()">Back to the list</button>
   </div>
 </div>

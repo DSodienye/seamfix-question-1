@@ -10,32 +10,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr *ngFor="let domain of domains">
+        <td>{{ domain.name }}</td>
+        <td>{{ domain.expiration }}</td>
+        <td>{{ formatRenewalPrice(domain.renewal_price) }}</td>
         <td>
-          [[ domain name ]]
-        </td>
-        <td>
-          [[ domain expiration ]]
-        </td>
-        <td>
-          [[ domain renewal price ]]
-        </td>
-        <td>
-          <a>details</a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          [[ domain name ]]
-        </td>
-        <td>
-          [[ domain expiration ]]
-        </td>
-        <td>
-          [[ domain renewal price ]]
-        </td>
-        <td>
-          <a>details</a>
+          <a (click)="goToDetails(domain.id)" style="cursor:pointer">Details</a>
         </td>
       </tr>
     </tbody>

@@ -9,7 +9,11 @@ import { AppComponent } from './app.component';
 import { DomainDetailsComponent } from './domain-details/domain-details.component';
 import { DomainListComponent } from './domain-list/domain-list.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: '', component: DomainListComponent },
+  { path: 'domain/:id', component: DomainDetailsComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
+];
 
 @NgModule({
   declarations: [
