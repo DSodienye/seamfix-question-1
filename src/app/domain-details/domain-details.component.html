@@ -1,32 +1,7 @@
-<h1>
-  [[ domain name ]]
-</h1>
-<div class="form">
-  <div class="form-group">
-    <label>ID:</label>
-    [[ domain id ]]
-  </div>
-  <div class="form-group">
-    <label>Name:</label>
-    [[ domain name ]]
-  </div>
-  <div class="form-group">
-    <label>Expiration:</label>
-    [[ domain expiration ]]
-  </div>
-  <div class="form-group">
-    <label>Auto Renew:</label>
-    [[ domain auto-renew ]]
-  </div>
-  <div class="form-group">
-    <label>Domain Privacy:</label>
-    [[ domain privacy ]]
-  </div>
-  <div class="form-group">
-    <label>Renewal Price:</label>
-    [[ domain renewal price ]]
-  </div>
-  <div class="form-actions">
-    <button type="button">Back to the list</button>
-  </div>
+<!-- domain-details.component.html -->
+<div *ngIf="domain"> <!-- Show if domain exists -->
+  <h2>{{ domain.name }}</h2> <!-- Show domain name -->
+  <p>Auto Renew: {{ domain.autoRenew ? 'Yes' : 'No' }}</p> <!-- Show auto renew as Yes/No -->
+  <p>Privacy: {{ domain.privacy ? 'Yes' : 'No' }}</p> <!-- Show privacy as Yes/No -->
+  <button (click)="backToList()">Back to List</button> <!-- Back to list button -->
 </div>
